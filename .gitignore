@@ -19,3 +19,4 @@ keystore.properties
 # junk / local
 *.stackdump
 desktop.ini
+app/src/main/java/com/example/torajacarvingai/.hermes-tmp*/
