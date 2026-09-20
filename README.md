@@ -32,9 +32,7 @@ TorajaCarvingAI/
 │   ├── inspect_tflite_model.py   # inspeksi TFLite
 │   ├── show_model_summary.py     # ringkasan arsitektur
 │   └── arsitektur_model_lengkap.txt
-├── web/                  # Web portofolio (sumber, single-file)
-└── docs/                 # GitHub Pages (publish dari folder ini)
-    └── desain/           # ERD, use case diagram, dump UI
+└── desain/               # ERD, use case diagram, dump UI
 ```
 
 ### Setup (Android)
@@ -53,16 +51,8 @@ python ml/inspect_tflite_model.py             # cek input/output model .tflite
 python ml/show_model_summary.py               # ringkasan arsitektur
 ```
 
-### Web portofolio
-
-Portofolio single-file (HTML+CSS+JS, semua gambar & sertifikat tertanam):
-
-- Live: **https://renaldirombe-droid.github.io/TorajaCarvingA/**
-- Sumber: `web/index.html`, salinan publish: `docs/index.html`
-
 ### Teknologi
 
 - **Android** — Kotlin, Jetpack (Room, Preferences, ViewBinding)
 - **TensorFlow Lite** — MobileNetV2 (float16/float32), input 320×320
 - **Python** — skrip training & inspeksi model
-- **GitHub Pages** — hosting web portofolio
