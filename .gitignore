@@ -24,3 +24,6 @@ app/src/main/java/com/example/torajacarvingai/.hermes-tmp*/
 # IDE folders
 /.idea/
 /.vscode/
+
+# agent temp junk (global)
+.hermes-tmp*/
