@@ -1,0 +1,594 @@
+<title>TorajaCarvingAI — Use Case Diagram</title>
+<style>
+  :root {
+    --bg-page: #FAF7F2;
+    --bg-card: #FFFFFF;
+    --ink: #241812;
+    --ink-soft: #5B4C42;
+    --ink-faint: #8A7B6C;
+    --line: #C9BBA8;
+    --line-soft: #DED2C1;
+    --accent-gold: #8F6300;
+    --accent-crimson: #A31F1F;
+    --boundary-fill: #FFFDF9;
+    --actor-fill: #2D0A14;
+    --actor-ink: #F4E9DC;
+    --band-a: rgba(139,120,92,0.09);
+    --band-b: rgba(143,99,0,0.10);
+    --band-c: rgba(163,31,31,0.08);
+    --band-d: rgba(139,120,92,0.09);
+    --pill-include-bg: rgba(143,99,0,0.14);
+    --pill-extend-bg: rgba(163,31,31,0.12);
+    --shadow: 0 1px 2px rgba(36,24,18,0.06), 0 6px 18px rgba(36,24,18,0.07);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-page: #15100D;
+      --bg-card: #1E1611;
+      --ink: #F1E7DA;
+      --ink-soft: #C7B7A5;
+      --ink-faint: #8E7C6C;
+      --line: #4A3B30;
+      --line-soft: #362B22;
+      --accent-gold: #DBA53E;
+      --accent-crimson: #E5696B;
+      --boundary-fill: #1C1510;
+      --actor-fill: #3A0F1D;
+      --actor-ink: #F4E9DC;
+      --band-a: rgba(255,255,255,0.045);
+      --band-b: rgba(219,165,62,0.10);
+      --band-c: rgba(229,105,107,0.09);
+      --band-d: rgba(255,255,255,0.045);
+      --pill-include-bg: rgba(219,165,62,0.16);
+      --pill-extend-bg: rgba(229,105,107,0.14);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 22px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg-page: #15100D; --bg-card: #1E1611; --ink: #F1E7DA; --ink-soft: #C7B7A5; --ink-faint: #8E7C6C;
+    --line: #4A3B30; --line-soft: #362B22; --accent-gold: #DBA53E; --accent-crimson: #E5696B;
+    --boundary-fill: #1C1510; --actor-fill: #3A0F1D; --actor-ink: #F4E9DC;
+    --band-a: rgba(255,255,255,0.045); --band-b: rgba(219,165,62,0.10); --band-c: rgba(229,105,107,0.09); --band-d: rgba(255,255,255,0.045);
+    --pill-include-bg: rgba(219,165,62,0.16); --pill-extend-bg: rgba(229,105,107,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 22px rgba(0,0,0,0.35);
+  }
+  :root[data-theme="light"] {
+    --bg-page: #FAF7F2; --bg-card: #FFFFFF; --ink: #241812; --ink-soft: #5B4C42; --ink-faint: #8A7B6C;
+    --line: #C9BBA8; --line-soft: #DED2C1; --accent-gold: #8F6300; --accent-crimson: #A31F1F;
+    --boundary-fill: #FFFDF9; --actor-fill: #2D0A14; --actor-ink: #F4E9DC;
+    --band-a: rgba(139,120,92,0.09); --band-b: rgba(143,99,0,0.10); --band-c: rgba(163,31,31,0.08); --band-d: rgba(139,120,92,0.09);
+    --pill-include-bg: rgba(143,99,0,0.14); --pill-extend-bg: rgba(163,31,31,0.12);
+    --shadow: 0 1px 2px rgba(36,24,18,0.06), 0 6px 18px rgba(36,24,18,0.07);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg-page);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 48px 24px 72px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 66ch;
+    margin: 0;
+  }
+
+  .diagram-card {
+    margin-top: 36px;
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 8px;
+  }
+  .diagram-scroll {
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+  .diagram-scroll svg {
+    display: block;
+    min-width: 1040px;
+    width: 100%;
+    height: auto;
+  }
+
+  section.panel {
+    margin-top: 28px;
+  }
+  .panel h2 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 19px;
+    margin: 0 0 14px;
+  }
+
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px 32px;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .legend-swatch { flex: none; }
+  .swatch-line {
+    width: 34px; height: 2px; background: var(--ink-faint);
+  }
+  .swatch-include {
+    width: 34px; height: 0;
+    border-top: 2px dashed var(--accent-gold);
+  }
+  .swatch-extend {
+    width: 34px; height: 0;
+    border-top: 2px dashed var(--accent-crimson);
+  }
+  .swatch-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+
+  .cards-2col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 16px;
+  }
+  .actor-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+  .actor-card .kicker {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-crimson);
+    margin: 0 0 6px;
+  }
+  .actor-card h3 {
+    margin: 0 0 8px;
+    font-size: 16.5px;
+  }
+  .actor-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .notes-list {
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .note-item {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .note-badge {
+    flex: none;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--pill-extend-bg);
+    color: var(--accent-crimson);
+    font-weight: 700;
+    font-size: 12.5px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Segoe UI", system-ui, sans-serif;
+  }
+  .note-item code {
+    background: var(--band-a);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 12.5px;
+    color: var(--ink);
+  }
+
+  table.ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 13.5px;
+  }
+  .ref-table-wrap { overflow-x: auto; border-radius: 12px; }
+  table.ref-table th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 700;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    white-space: nowrap;
+  }
+  table.ref-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+  table.ref-table tr:last-child td { border-bottom: none; }
+  table.ref-table td.uc-name { color: var(--ink); font-weight: 600; white-space: nowrap; }
+  table.ref-table td.uc-id {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .band-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .band-tag.b { background: var(--band-b); color: var(--accent-gold); }
+  .band-tag.c { background: var(--band-c); color: var(--accent-crimson); }
+  .band-tag.d { background: var(--band-a); color: var(--ink-soft); }
+
+  footer {
+    margin-top: 40px;
+    color: var(--ink-faint);
+    font-size: 12.5px;
+  }
+
+  @media (max-width: 640px) {
+    .cards-2col { grid-template-columns: 1fr; }
+  }
+</style>
+
+<main>
+  <p class="eyebrow">UML — Use Case Diagram</p>
+  <h1>TorajaCarvingAI</h1>
+  <p class="subtitle">
+    Pemetaan interaksi pengguna dengan aplikasi identifikasi motif ukiran Toraja — dari pemindaian kamera,
+    klasifikasi on-device dengan TensorFlow Lite, hingga penjelajahan katalog, favorit, dan riwayat.
+    Diturunkan langsung dari struktur navigasi dan kode aplikasi saat ini.
+  </p>
+
+  <div class="diagram-card">
+    <div class="diagram-scroll">
+      <svg viewBox="0 0 1440 1010" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Use case diagram aplikasi TorajaCarvingAI">
+        <defs>
+          <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+            <path d="M1,1 L9,5 L1,9" fill="none" stroke="var(--accent-gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="arrowCrimson" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+            <path d="M1,1 L9,5 L1,9" fill="none" stroke="var(--accent-crimson)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#241812" flood-opacity="0.16"/>
+          </filter>
+        </defs>
+
+        <style>
+          .uc-shape { fill: var(--bg-card); stroke: var(--line); stroke-width: 1.4; filter: url(#softShadow); }
+          .uc-label { fill: var(--ink); font-size: 15px; font-family: "Segoe UI", system-ui, sans-serif; text-anchor: middle; }
+          .band-bg { stroke: none; }
+          .band-label { fill: var(--ink-faint); font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px; font-family: "Segoe UI", system-ui, sans-serif; }
+          .assoc-line { stroke: var(--ink-faint); stroke-width: 1.4; fill: none; }
+          .include-line { stroke: var(--accent-gold); stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrowGold); }
+          .extend-line { stroke: var(--accent-crimson); stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrowCrimson); }
+          .rel-pill-include { fill: var(--pill-include-bg); }
+          .rel-pill-extend { fill: var(--pill-extend-bg); }
+          .rel-text-include { fill: var(--accent-gold); font-size: 11px; font-style: italic; text-anchor: middle; font-family: "Segoe UI", system-ui, sans-serif; }
+          .rel-text-extend { fill: var(--accent-crimson); font-size: 11px; font-style: italic; text-anchor: middle; font-family: "Segoe UI", system-ui, sans-serif; }
+          .actor-fig { fill: none; stroke: var(--actor-ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+          .actor-head { fill: var(--actor-fill); stroke: var(--actor-ink); stroke-width: 2.4; }
+          .actor-label { fill: var(--ink); font-size: 14.5px; font-weight: 700; text-anchor: middle; font-family: "Segoe UI", system-ui, sans-serif; }
+          .actor-sub { fill: var(--ink-faint); font-size: 11.5px; text-anchor: middle; font-family: "Segoe UI", system-ui, sans-serif; }
+          .boundary-title { fill: var(--ink); font-family: "Iowan Old Style","Palatino Linotype",Georgia,serif; font-size: 19px; font-weight: 600; }
+          .boundary-kicker { fill: var(--ink-faint); font-size: 11.5px; font-style: italic; font-family: "Segoe UI", system-ui, sans-serif; }
+          .note-badge-svg circle { fill: var(--pill-extend-bg); stroke: var(--accent-crimson); stroke-width: 1.2; }
+          .note-badge-svg text { fill: var(--accent-crimson); font-size: 11px; font-weight: 700; text-anchor: middle; font-family: "Segoe UI", system-ui, sans-serif; }
+        </style>
+
+        <!-- ===== band backgrounds ===== -->
+        <rect x="200" y="140" width="1040" height="90" rx="10" class="band-bg" fill="var(--band-a)"/>
+        <rect x="200" y="245" width="1040" height="220" rx="10" class="band-bg" fill="var(--band-b)"/>
+        <rect x="200" y="480" width="1040" height="180" rx="10" class="band-bg" fill="var(--band-c)"/>
+        <rect x="200" y="672" width="1040" height="298" rx="10" class="band-bg" fill="var(--band-d)"/>
+
+        <!-- ===== system boundary ===== -->
+        <rect x="190" y="60" width="1060" height="920" rx="18" fill="var(--boundary-fill)" stroke="var(--line)" stroke-width="1.6"/>
+        <text x="216" y="84" class="boundary-kicker">&#171;system&#187;</text>
+        <text x="216" y="110" class="boundary-title">Aplikasi TorajaCarvingAI</text>
+
+        <text x="216" y="163" class="band-label">ORIENTASI AWAL</text>
+        <text x="216" y="268" class="band-label">PEMINDAIAN &amp; KLASIFIKASI AI</text>
+        <text x="216" y="503" class="band-label">DETAIL &amp; EDUKASI MOTIF</text>
+        <text x="216" y="695" class="band-label">KATALOG, FAVORIT &amp; RIWAYAT</text>
+
+        <!-- ===== association lines (actor <-> use case), drawn under shapes ===== -->
+        <g class="assoc-line">
+          <line x1="95" y1="520" x2="720" y2="195"/>
+          <line x1="95" y1="520" x2="565" y2="310"/>
+          <line x1="95" y1="520" x2="565" y2="415"/>
+          <line x1="95" y1="520" x2="430" y2="735"/>
+          <line x1="95" y1="520" x2="720" y2="735"/>
+          <line x1="95" y1="520" x2="1000" y2="735"/>
+          <line x1="95" y1="520" x2="1000" y2="855"/>
+          <line x1="1345" y1="350" x2="905" y2="360"/>
+        </g>
+
+        <!-- ===== include relations (base -> included), gold ===== -->
+        <g>
+          <line class="include-line" x1="565" y1="310" x2="330" y2="310"/>
+          <line class="include-line" x1="565" y1="308" x2="905" y2="345"/>
+          <line class="include-line" x1="565" y1="417" x2="905" y2="375"/>
+          <line class="include-line" x1="880" y1="400" x2="745" y2="495"/>
+          <line class="include-line" x1="470" y1="700" x2="640" y2="558"/>
+          <line class="include-line" x1="720" y1="693" x2="720" y2="576"/>
+        </g>
+
+        <!-- ===== extend relations (extension -> base), crimson ===== -->
+        <g>
+          <line class="extend-line" x1="470" y1="575" x2="660" y2="540"/>
+          <line class="extend-line" x1="970" y1="575" x2="800" y2="540"/>
+          <line class="extend-line" x1="335" y1="815" x2="400" y2="770"/>
+          <line class="extend-line" x1="560" y1="815" x2="470" y2="775"/>
+          <line class="extend-line" x1="595" y1="815" x2="680" y2="775"/>
+        </g>
+
+        <!-- ===== relation pills (labels) ===== -->
+        <g>
+          <rect class="rel-pill-include" x="405" y="298" width="60" height="18" rx="9"/>
+          <text class="rel-text-include" x="435" y="311">&#171;include&#187;</text>
+
+          <rect class="rel-pill-include" x="700" y="298" width="60" height="18" rx="9"/>
+          <text class="rel-text-include" x="730" y="311">&#171;include&#187;</text>
+
+          <rect class="rel-pill-include" x="700" y="368" width="60" height="18" rx="9"/>
+          <text class="rel-text-include" x="730" y="381">&#171;include&#187;</text>
+
+          <rect class="rel-pill-include" x="775" y="440" width="60" height="18" rx="9"/>
+          <text class="rel-text-include" x="805" y="453">&#171;include&#187;</text>
+
+          <rect class="rel-pill-include" x="520" y="618" width="60" height="18" rx="9"/>
+          <text class="rel-text-include" x="550" y="631">&#171;include&#187;</text>
+
+          <rect class="rel-pill-include" x="690" y="625" width="60" height="18" rx="9"/>
+          <text class="rel-text-include" x="720" y="638">&#171;include&#187;</text>
+
+          <rect class="rel-pill-extend" x="530" y="548" width="58" height="18" rx="9"/>
+          <text class="rel-text-extend" x="559" y="561">&#171;extend&#187;</text>
+
+          <rect class="rel-pill-extend" x="845" y="548" width="58" height="18" rx="9"/>
+          <text class="rel-text-extend" x="874" y="561">&#171;extend&#187;</text>
+
+          <rect class="rel-pill-extend" x="330" y="785" width="58" height="18" rx="9"/>
+          <text class="rel-text-extend" x="359" y="798">&#171;extend&#187;</text>
+
+          <rect class="rel-pill-extend" x="470" y="800" width="58" height="18" rx="9"/>
+          <text class="rel-text-extend" x="499" y="813">&#171;extend&#187;</text>
+
+          <rect class="rel-pill-extend" x="615" y="800" width="58" height="18" rx="9"/>
+          <text class="rel-text-extend" x="644" y="813">&#171;extend&#187;</text>
+        </g>
+
+        <!-- ===== use case ellipses ===== -->
+        <!-- Band A -->
+        <g>
+          <ellipse class="uc-shape" cx="720" cy="195" rx="120" ry="40"/>
+          <text class="uc-label" x="720" y="191"><tspan x="720">Melihat Panduan Awal</tspan><tspan x="720" dy="18">(Onboarding)</tspan></text>
+        </g>
+
+        <!-- Band B -->
+        <g>
+          <ellipse class="uc-shape" cx="330" cy="310" rx="95" ry="38"/>
+          <text class="uc-label" x="330" y="306"><tspan x="330">Meminta Izin</tspan><tspan x="330" dy="18">Kamera</tspan></text>
+
+          <ellipse class="uc-shape" cx="565" cy="310" rx="115" ry="42"/>
+          <text class="uc-label" x="565" y="306"><tspan x="565">Memindai Motif</tspan><tspan x="565" dy="18">via Kamera</tspan></text>
+
+          <ellipse class="uc-shape" cx="565" cy="415" rx="115" ry="42"/>
+          <text class="uc-label" x="565" y="411"><tspan x="565">Memindai Motif</tspan><tspan x="565" dy="18">dari Galeri</tspan></text>
+
+          <ellipse class="uc-shape" cx="905" cy="360" rx="125" ry="46"/>
+          <text class="uc-label" x="905" y="356"><tspan x="905">Mengklasifikasikan</tspan><tspan x="905" dy="18">Motif (AI)</tspan></text>
+        </g>
+
+        <!-- Band C -->
+        <g>
+          <ellipse class="uc-shape" cx="720" cy="530" rx="145" ry="46"/>
+          <text class="uc-label" x="720" y="526"><tspan x="720">Melihat Detail &amp;</tspan><tspan x="720" dy="18">Kategori Motif</tspan></text>
+
+          <ellipse class="uc-shape" cx="470" cy="615" rx="115" ry="40"/>
+          <text class="uc-label" x="470" y="611"><tspan x="470">Mendengarkan</tspan><tspan x="470" dy="18">Penjelasan (TTS)</tspan></text>
+
+          <ellipse class="uc-shape" cx="970" cy="615" rx="120" ry="40"/>
+          <text class="uc-label" x="970" y="611"><tspan x="970">Membaca Penjelasan</tspan><tspan x="970" dy="18">Lengkap</tspan></text>
+        </g>
+
+        <!-- Band D -->
+        <g>
+          <ellipse class="uc-shape" cx="430" cy="735" rx="115" ry="42"/>
+          <text class="uc-label" x="430" y="731"><tspan x="430">Menelusuri Katalog</tspan><tspan x="430" dy="18">Motif</tspan></text>
+
+          <ellipse class="uc-shape" cx="310" cy="840" rx="90" ry="36"/>
+          <text class="uc-label" x="310" y="845">Mencari Motif</text>
+
+          <ellipse class="uc-shape" cx="720" cy="735" rx="115" ry="42"/>
+          <text class="uc-label" x="720" y="731"><tspan x="720">Melihat Motif</tspan><tspan x="720" dy="18">Favorit</tspan></text>
+
+          <ellipse class="uc-shape" cx="575" cy="855" rx="125" ry="40"/>
+          <text class="uc-label" x="575" y="851"><tspan x="575">Menandai / Batalkan</tspan><tspan x="575" dy="18">Favorit</tspan></text>
+
+          <ellipse class="uc-shape" cx="1000" cy="735" rx="115" ry="42"/>
+          <text class="uc-label" x="1000" y="731"><tspan x="1000">Melihat Riwayat</tspan><tspan x="1000" dy="18">Pemindaian</tspan></text>
+
+          <ellipse class="uc-shape" cx="1000" cy="855" rx="115" ry="40"/>
+          <text class="uc-label" x="1000" y="851"><tspan x="1000">Melihat Tentang</tspan><tspan x="1000" dy="18">Aplikasi</tspan></text>
+        </g>
+
+        <!-- ===== note markers ===== -->
+        <g class="note-badge-svg">
+          <circle cx="808" cy="452" r="11"/>
+          <text x="808" y="456">1</text>
+        </g>
+        <g class="note-badge-svg">
+          <circle cx="720" cy="600" r="11"/>
+          <text x="720" y="604">2</text>
+        </g>
+
+        <!-- ===== actors (drawn last so lines tuck under) ===== -->
+        <g transform="translate(95,520)">
+          <circle class="actor-head" cx="0" cy="-34" r="11"/>
+          <g class="actor-fig">
+            <line x1="0" y1="-23" x2="0" y2="12"/>
+            <line x1="-17" y1="-8" x2="17" y2="-8"/>
+            <line x1="0" y1="12" x2="-15" y2="36"/>
+            <line x1="0" y1="12" x2="15" y2="36"/>
+          </g>
+          <text class="actor-label" x="0" y="66">Pengguna</text>
+          <text class="actor-sub" x="0" y="83">(Wisatawan / Pelajar /</text>
+          <text class="actor-sub" x="0" y="97">Pemerhati Budaya)</text>
+        </g>
+
+        <g transform="translate(1345,350)">
+          <circle class="actor-head" cx="0" cy="-34" r="11"/>
+          <g class="actor-fig">
+            <line x1="0" y1="-23" x2="0" y2="12"/>
+            <line x1="-17" y1="-8" x2="17" y2="-8"/>
+            <line x1="0" y1="12" x2="-15" y2="36"/>
+            <line x1="0" y1="12" x2="15" y2="36"/>
+          </g>
+          <text class="actor-label" x="0" y="66">Sistem Klasifikasi</text>
+          <text class="actor-label" x="0" y="83">AI</text>
+          <text class="actor-sub" x="0" y="100">(TensorFlow Lite,</text>
+          <text class="actor-sub" x="0" y="114">on-device)</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>Legenda</h2>
+    <div class="legend-row">
+      <div class="legend-item"><span class="legend-swatch swatch-line"></span> Asosiasi langsung (aktor → use case)</div>
+      <div class="legend-item"><span class="legend-swatch swatch-include"></span> &#171;include&#187; — langkah wajib di dalam alur</div>
+      <div class="legend-item"><span class="legend-swatch swatch-extend"></span> &#171;extend&#187; — perilaku opsional/tambahan</div>
+      <div class="legend-item"><span class="legend-swatch swatch-dot" style="background:var(--band-b)"></span> Kelompok: Pemindaian &amp; AI</div>
+      <div class="legend-item"><span class="legend-swatch swatch-dot" style="background:var(--band-c)"></span> Kelompok: Detail &amp; Edukasi</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Aktor</h2>
+    <div class="cards-2col">
+      <div class="actor-card">
+        <p class="kicker">Aktor Primer</p>
+        <h3>Pengguna</h3>
+        <p>Orang yang memakai aplikasi untuk mengenali motif ukiran Toraja — memindai lewat kamera atau galeri,
+        menjelajahi katalog, menandai favorit, dan meninjau riwayat pemindaian. Tidak ada peran admin/otentikasi;
+        seluruh fitur bersifat publik bagi satu jenis pengguna.</p>
+      </div>
+      <div class="actor-card">
+        <p class="kicker">Aktor Sekunder</p>
+        <h3>Sistem Klasifikasi AI</h3>
+        <p>Model TensorFlow Lite (320×320×3, 31 kelas termasuk <code style="background:var(--band-a);border-radius:4px;padding:1px 5px;">dataset_tidak_terdeteksi</code>)
+        yang berjalan on-device di dalam <code style="background:var(--band-a);border-radius:4px;padding:1px 5px;">MainActivity</code>.
+        Menerima gambar hasil pra-pemrosesan dan mengembalikan probabilitas per kelas motif.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Catatan implementasi</h2>
+    <div class="notes-list">
+      <div class="note-item">
+        <span class="note-badge">1</span>
+        <span>Popup "Melihat Detail &amp; Kategori Motif" otomatis <strong>tidak ditampilkan</strong> ketika hasil klasifikasi
+        berkategori Tidak Terdeteksi — dijaga oleh guard <code>isUnknownLabel()</code> dan <code>kategoriPassura == TIDAK_TERDETEKSI</code>
+        di <code>showMotifInfo()</code>.</span>
+      </div>
+      <div class="note-item">
+        <span class="note-badge">2</span>
+        <span>Tombol dengar (TTS) dan "Baca Penjelasan Lengkap" saat ini hanya aktif ketika detail dibuka dari
+        <em>hasil pemindaian</em> (<code>MainActivity</code>). Dialog identik yang dipanggil dari Katalog atau Favorit
+        menampilkan deskripsi lengkap secara langsung tanpa kedua kontrol ini.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Referensi use case</h2>
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <thead>
+          <tr><th>Kelompok</th><th>Use Case</th><th>Ringkasan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="band-tag d">Orientasi</span></td><td class="uc-name">Melihat Panduan Awal</td><td>Tiga slide pengenalan fitur, hanya muncul di run pertama aplikasi.</td></tr>
+          <tr><td><span class="band-tag b">Pemindaian</span></td><td class="uc-name">Memindai Motif via Kamera</td><td>Arahkan kamera langsung ke ukiran untuk deteksi real-time.</td></tr>
+          <tr><td><span class="band-tag b">Pemindaian</span></td><td class="uc-name">Memindai Motif dari Galeri</td><td>Pilih foto dari galeri, lalu pangkas (crop) sebelum diklasifikasi.</td></tr>
+          <tr><td><span class="band-tag b">Pemindaian</span></td><td class="uc-name">Meminta Izin Kamera</td><td>Permintaan izin runtime CAMERA sebelum pratinjau kamera aktif.</td></tr>
+          <tr><td><span class="band-tag b">Pemindaian</span></td><td class="uc-name">Mengklasifikasikan Motif (AI)</td><td>Inferensi TFLite 320×320×3 menghasilkan probabilitas 31 kelas.</td></tr>
+          <tr><td><span class="band-tag c">Detail</span></td><td class="uc-name">Melihat Detail &amp; Kategori Motif</td><td>Popup nama, kategori Passura', gambar, dan makna singkat/lengkap.</td></tr>
+          <tr><td><span class="band-tag c">Detail</span></td><td class="uc-name">Mendengarkan Penjelasan (TTS)</td><td>Text-to-Speech membacakan deskripsi lengkap bermuatan kategori.</td></tr>
+          <tr><td><span class="band-tag c">Detail</span></td><td class="uc-name">Membaca Penjelasan Lengkap</td><td>Perluas deskripsi singkat menjadi makna filosofis lengkap.</td></tr>
+          <tr><td><span class="band-tag d">Katalog</span></td><td class="uc-name">Menelusuri Katalog Motif</td><td>Daftar seluruh motif yang dikenali model (label terdaftar saja).</td></tr>
+          <tr><td><span class="band-tag d">Katalog</span></td><td class="uc-name">Mencari Motif</td><td>Filter katalog berdasarkan nama, id, alias, atau isi deskripsi.</td></tr>
+          <tr><td><span class="band-tag d">Katalog</span></td><td class="uc-name">Melihat Motif Favorit</td><td>Daftar motif yang ditandai favorit oleh pengguna.</td></tr>
+          <tr><td><span class="band-tag d">Katalog</span></td><td class="uc-name">Menandai / Batalkan Favorit</td><td>Toggle status favorit langsung dari kartu katalog atau favorit.</td></tr>
+          <tr><td><span class="band-tag d">Info</span></td><td class="uc-name">Melihat Riwayat Pemindaian</td><td>Log motif yang berhasil dikenali dengan status keyakinan tinggi.</td></tr>
+          <tr><td><span class="band-tag d">Info</span></td><td class="uc-name">Melihat Tentang Aplikasi</td><td>Informasi filosofi dan latar belakang budaya aplikasi.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Diturunkan dari struktur navigasi aktual (MainMenuActivity, MainActivity, KatalogActivity, FavoritActivity,
+    RiwayatActivity, AboutActivity, OnboardingActivity) dan mapping kategori Passura' (MotifKategori.kt).
+  </footer>
+</main>

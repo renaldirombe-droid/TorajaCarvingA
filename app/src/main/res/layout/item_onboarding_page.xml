@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="@color/background_dark">
+
+    <ImageView
+        android:id="@+id/imgIllustration"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="48dp"
+        android:contentDescription="Illustration" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Judul Halaman"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"
+        android:letterSpacing="-0.01" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi halaman panduan awal menjelaskan fitur secara detail agar mudah dipahami."
+        android:textColor="@color/text_secondary"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:lineSpacingMultiplier="1.5" />
+
+</LinearLayout>

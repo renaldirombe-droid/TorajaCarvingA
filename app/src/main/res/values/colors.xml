@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Neo-Modern Light Theme Palette -->
+    <color name="primary_dark">#FAF8F5</color>        <!-- Light warm background -->
+    <color name="background_dark">#FAF8F5</color>     <!-- Light warm background -->
+    <color name="surface_dark">#FFFFFF</color>        <!-- Pure white surface -->
+    <color name="surface_elevated">#F2EFE9</color>    <!-- Slightly darker cream surface -->
+
+    <!-- Accent Colors (Crimson & Gold - Balanced for Light Theme) -->
+    <color name="primary_crimson">#B71C1C</color>     <!-- Rich cultural crimson/red -->
+    <color name="primary_light">#D32F2F</color>
+    <color name="crimson_dark">#7F0000</color>
+    <color name="gold_accent">#B37D00</color>         <!-- Bronze gold (good contrast on light) -->
+    <color name="gold_light">#D48C00</color>
+    <color name="gold_dark">#806000</color>
+
+    <!-- Text Colors (Dark/Charcoal for Light Theme) -->
+    <color name="text_primary">#1A1A1A</color>        <!-- Charcoal black -->
+    <color name="text_secondary">#4D4D4D</color>      <!-- Dark grey -->
+    <color name="text_tertiary">#707070</color>       <!-- Medium grey -->
+    <color name="text_disabled">#9E9E9E</color>       <!-- Light grey -->
+
+    <!-- Glassmorphism Overlays (Frosted White for Light Theme) -->
+    <color name="glass_dark">#E6FFFFFF</color>        <!-- Frosted white glass -->
+    <color name="glass_darker">#F2FAF8F5</color>      <!-- Tinted frosted glass -->
+    <color name="glass_black">#15000000</color>       <!-- Light grey overlay shadow -->
+    <color name="glass_white">#99FFFFFF</color>       <!-- Translucent white -->
+
+    <!-- Border Colors -->
+    <color name="border_white">#E0DCD3</color>        <!-- Light cream-grey border -->
+    <color name="border_gold">#80B37D00</color>
+    <color name="border_crimson">#80B71C1C</color>
+
+    <!-- Status Colors -->
+    <color name="success_green">#2E7D32</color>
+    <color name="error_red">#C62828</color>
+    <color name="warning_orange">#D84315</color>
+
+    <!-- Legacy Colors (untuk kompatibilitas) -->
+    <color name="background_warm">#FAF8F5</color>
+    <color name="text_charcoal">#1A1A1A</color>
+    <color name="text_gray">#4D4D4D</color>
+    <color name="divider_color">#E0DCD3</color>
+</resources>

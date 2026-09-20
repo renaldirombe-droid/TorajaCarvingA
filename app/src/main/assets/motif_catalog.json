@@ -1,0 +1,219 @@
+{
+  "Pa_tedong_tumuru": {
+    "display_name": "Pa' Tedong Tumuru",
+    "category": "Passura’ Todolo",
+    "philosophy": "Tedong atau Kerbau Tumuru atau Menderum. Tumuru artinya berjalan tanpa menghiraukan keadaan sekeliling.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "dataset_tidak_terdeteksi": {
+    "display_name": "Tidak Terdeteksi",
+    "category": "",
+    "philosophy": "",
+    "show_popup": false,
+    "image_url": ""
+  },
+  "pa_barana": {
+    "display_name": "Pa' Barana'",
+    "category": "Passura’ Malollek",
+    "philosophy": "Barana' atau Beringin ; Pa' barana' adalah ukiran yang menyerupai ranting dan daun beringin. Beringin adalah pohon yang besar, tinggi dan rindang/rimbun sehingga semua yang ada dibawahnya merasakan kesejukan dan keamanan.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_baranae'(Passape_Bai)": {
+    "display_name": "Pa' Baranae' (Passape Bai)",
+    "category": "Passura’ Malollek",
+    "philosophy": "Passape atau Dipisahkan atau Bahagian Bai atau Babi Ukiran Pa' Baranae' atau Passapa Bai adalah ukiran yang menyerupai mulut babi antara rahang bawah dengan rahang atas.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_bare_allo": {
+    "display_name": "Pa'Barre Allo",
+    "category": "Garonto’ Passura",
+    "philosophy": "Barre atau Berre' atau Terbit (matahari terbit) Barre atau Bulat atau Matahari Bulat Allo atau Matahari Ukiran yang menyerupai bulatan matahari dengan pancaran sinarnya bagaikan sinar matahari yang baru terbit dipagi hari. Jenis ukiran ini ditemukan pada bagian muka dan belakang rumah ad at To ra ja p ad a p ap an a tas berbentuk segi tiga (Para Longa).",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_batang_lau": {
+    "display_name": "Pa' Batang Lau",
+    "category": "Passura’ Malollek",
+    "philosophy": "Batang atau Batang. Lau atau Labu. Ukiran ini menggambarkan batang labu, yang hanya satu batang induk, kemudian bercabang lalu dari cabang tumbuh rantingnya dan dari ranting bertunas menjadi cabang dan seterusnya hingga mencapai ratusan meter panjangnya.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_bombo_uai": {
+    "display_name": "Pa' Bombo Uai (I)",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Pa' Bombo Uai adalah ukiran yang menyerupai binatang air (bombo uai). Bombo uai adalah binatang yang dapat menitih air dan dapat bergerak sangat cepat.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_bulintong_somba": {
+    "display_name": "Pa' Bulintong Somba ’",
+    "category": "Passura’ Todolo",
+    "philosophy": "Pa' Bulintong Somba' adalah pengembangan dari ukiran. Pa' Bulintong.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_bulu_londong": {
+    "display_name": "Pa' Bulu Londong",
+    "category": "Passura’ Todolo",
+    "philosophy": "Bulu atau Bulu Londong atau Ayam Jantan. Ukiran ini menyerupai rumbai ayam jantan.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_don_bolu": {
+    "display_name": "Pa' Don Bolu (Daun Sirih)",
+    "category": "Passura’ Todolo",
+    "philosophy": "Ukiran yang menyerupai daun sirih, melambangkan keramahtamahan, persaudaraan erat, tanda penghormatan, serta ketaatan spiritual.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_don_paria": {
+    "display_name": "Pa' Daun Paria",
+    "category": "Passura’ Malollek",
+    "philosophy": "Daun artinya daun “Paria” artinya sayur paria. Kita maklumi bahwa paria ini terkenal dengan tanaman pahit.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_doti": {
+    "display_name": "Pa’ Doti Langi’",
+    "category": "Passura’ Todolo",
+    "philosophy": "Doti atau Ilmu (hitam) ; Doti atau Salego (tedong salego) ; Doti atau Baik atau Cantik Langi' atau Langit. Ukiran berupa palang yang berjejer- jejer dan ditengah-tengah ada semacam bintang bersinar bagaikan bintang diatas langit.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_doti_pandin": {
+    "display_name": "Pa’ Doti Pandin",
+    "category": "Passura’ Todolo",
+    "philosophy": "Doti atau Kerbau belang atau Cantik atau Ilmu hitam Pandin atau Pemuda ganteng Pa' Doti Pandin adalah pengembangan dari ukiran Pa' Doti Langi'.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_erong": {
+    "display_name": "Pa’ Erong",
+    "category": "Passura’ Todolo",
+    "philosophy": "Erong bagi masyarakat Toraja adalah sejenis peti yang setiap waktu dapat dibuka menurut adat untuk menyimpan tulang belulang dari satu rumpun keluarga. Jadi erong adalah peti tempat mengumpulkan tulang-tulang orang mati dalam satu rumpun yang biasa disimpan digua-gua.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_gayang": {
+    "display_name": "Pa' Gayang",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Gaang (gayang) adalah ukiran yang menyerupai keris emas. Gayang adalah keris yang bukannya digunakan sebagai senjata melainkan lebih bermakna sebagai harta kemuliaan yang dipusakai turun temurun.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_kadang_pao": {
+    "display_name": "Pa' Kadang Pao",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Kadang atau Kait atau Jolok Pao atau Mangga Pa' Kadang Pao adalah ukiran yang menyerupai alat penjolok (pengait) mangga adalah",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_kapu_baka": {
+    "display_name": "Pa' Kapu' Baka",
+    "category": "Passura’ Todolo",
+    "philosophy": "Kapu' atau Ikat ; Baka atau Bakul ; Kapu' Baka atau Pengikat bakul tempat menyimpan perhiasan dan harta kekayaan rumah. Pa' kapu' baka adalah ukiran yang menyerupai simpulan-simpulan penutup bakul.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_limbongan": {
+    "display_name": "Pa' Limbongan",
+    "category": "Passura’ Todolo",
+    "philosophy": "Limbongan atau Nama orang atau Ne' Limbongan Limbong atau Tenang Limbong atau Penampungan ikan berupa lobang besar yang sengaja dibuat dalam petak sawah yang kadang-kadang tidak pernah kering airnya. Dahulu kala Ne' Limbongan adalah arsitektur Toraja dan seorang pengukir pada j amannya.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_lolo_tabang": {
+    "display_name": "Pa' Lolo Tabang",
+    "category": "Passura’ Todolo",
+    "philosophy": "Lolo tabang terdiri dari kata lolo artinya pucuk dan tabang artinya lenjuang adalah sejenis tumbuhan di Toraja yang dapat digunakan sebagai obat. Ukiran ini menyempai pucuk daun lenjuang.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_manuk_londong": {
+    "display_name": "Pa' Manuk Londong",
+    "category": "Garonto’ Passura",
+    "philosophy": "Manuk atau Ayam ; Londong atau Jantan Pa' manuk londong adalah ukiran berupa avam jantan, biasanya terdapat pada bagian muka dan belakang rumah adat Toraja pada papan atas berbentuk segitiga (Para Longa). Biasanya ukiran ayam jantan diletakkan diatas Pa' Barre Allo.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_papan_kandaure": {
+    "display_name": "Pa’ Pa’pak (Papan) Kandaure",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Papan atau Sebidang atau Sebilah atau Selembar papan Kandaure atau Perhiasan tradisional Toraja yang dibuat dari butiran manik-manik yang beraneka ragam warnanya. Kandaure terdiri •.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_pollo_gayang": {
+    "display_name": "Pa' Pollo' Gayang",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Pollo atau Pantat atau Ujung bawah Gaang Keris Emas. Pa' Pollo' Gaang adalah ukiran yang menyerupai polio' gang (ujung sebelah bawah dari keris emas).",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_rangga_ulu": {
+    "display_name": "Pa' Rangga Ulu",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Rangga atau Banyak Ulu atau Kepala; Dalam ungkapan Toraja ada ungkapan: - Rangga Inaa artinya orang pintar dan bijaksana. - Rangga Lila artinya orang pintar berbicara.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_re_po": {
+    "display_name": "Pa' Re'po (Pang Re'po)",
+    "category": "Passura’ Malollek",
+    "philosophy": "Re'po artinya menari lincah sambil melipat lutut dalam bentuk siku-siku.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_sekong_kandaure": {
+    "display_name": "Pa' Sekong Kandaure",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Sekong atau Lekuk yang menyudut membentuk garis siku-siku. Kandaure - Perhiasan (benda) tradisional Toraja yang sangat berharga",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_sussuk": {
+    "display_name": "Pa'Sussu'",
+    "category": "Garonto’ Passura",
+    "philosophy": "Pa’Sussu’ ; Sussu - Garis, Goresan. Pa' sussu' adalah ukiran yang berbentuk garis-garis sejajar tanpa variasi dan tidak diberi warna.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_tanduk_rape": {
+    "display_name": "Pa’ Tanduk Ra'pe",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Tanduk atau Tanduk ; Ra'pe atau Tanduk yang pangkalnya melendut kebawah dan ujungnya melengkung ke atas. Bagi kerbau, tanduk adalah merupakan perisai atau alat untuk melawan dalam rangka melindungi diri atau menyerang lawan.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_tangke_lumu": {
+    "display_name": "Pa' Tangke Lumu’",
+    "category": "Passura’ Malollek",
+    "philosophy": "Tangke atau Cabang atau Carang Lumu' atau Lumut. Ukiran ini menyerupai carang carang tumbuhan lumut yang hidup didalam air.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_tangke_lumu_ditoke": {
+    "display_name": "Pa' Tangke Lumu' Ditoke'",
+    "category": "Passura’ Malollek",
+    "philosophy": "Ukiran berbentuk tangkai lumut yang digantung, melambangkan kekayaan, kemakmuran, serta ikatan persatuan keluarga yang tak terpisahkan meski terpisah jarak.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_tangki_pattung": {
+    "display_name": "Pa' Tangki' Pattung",
+    "category": "Passura’ Pa’Barean",
+    "philosophy": "Tangki' atau Alat semacam paku yang biasanya ditanamkan disebuah tiang dengan, maksud supaya kuat berkaitan. Ditangki' atau Supaya kuat berpegangan Pattung atau Bambu besar.",
+    "show_popup": true,
+    "image_url": ""
+  },
+  "pa_tedong": {
+    "display_name": "Pa'Tedong",
+    "category": "Garonto’ Passura",
+    "philosophy": "## Tedong atau Kerbau Ukiran ini biasa dilukiskan pada papan besar teratas (indo' para) dan pada dinding-dinding penyanggah badan rumah (manangnga banua), Bagi masyarakat Toraja kerbau adalah hewan paling tinggi nilai dan statusnya, untuk itu bagi masyarakat Toraja kerbau dijadikan sebagai standart/ukuran nilai dari semua harta / aset kekayaan",
+    "show_popup": true,
+    "image_url": ""
+  }
+}

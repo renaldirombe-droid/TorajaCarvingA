@@ -1,0 +1,15 @@
+{
+  "timestamp": "20260620_170939",
+  "top1_label": "dataset_tidak_terdeteksi",
+  "top1_conf": 0.9218,
+  "top2_label": "pa_papan_kandaure",
+  "top2_conf": 0.0147,
+  "top3_label": "pa_bare_allo",
+  "top3_conf": 0.0066,
+  "margin_top1_top2": 0.9071,
+  "reason": "RISKY",
+  "brightness": 123.4,
+  "blur_score": 428.6,
+  "image_size": "320x320",
+  "crop_mode": "KOTAK"
+}

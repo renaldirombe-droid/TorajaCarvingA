@@ -1,0 +1,20 @@
+{
+    "model_name": "TorajaCarvingAI",
+    "version": "mobilenetv2_37class_seed43_v17_android_robust_no_class_weight_ls003",
+    "input_size": 320,
+    "input_shape": [
+        320,
+        320,
+        3
+    ],
+    "input_range_android": "0..255 float32",
+    "internal_rescaling": "x / 127.5 - 1.0",
+    "num_classes": 37,
+    "class_weights": "all_1.0",
+    "label_smoothing": 0.03,
+    "seed": 43,
+    "dataset_file_id": "1lgSEeeL4GpDPWGAzf8F-3Nd3Q4y3Rffs",
+    "top1_accuracy_val_percent": 98.7360057782593,
+    "top3_accuracy_val_percent": 99.49440231130372,
+    "mean_margin_top1_top2": 0.9538239089266924
+}

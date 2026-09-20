@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TorajaCarvingAI</string>
+
+    <string name="deskripsi_aplikasi">TorajaCarvingAI merupakan aplikasi berbasis Android yang memanfaatkan teknologi Artificial Intelligence (AI) dengan arsitektur MobileNetV2 untuk mengenali motif ukiran kayu khas Toraja secara real-time. Aplikasi ini dikembangkan sebagai upaya digitalisasi dan pelestarian warisan budaya melalui edukasi visual yang interaktif.</string>
+
+    <string name="petunjuk_penggunaan">1. Buka menu pemindai kamera pada aplikasi.\n2. Posisikan kamera tegak lurus dan sejajar di depan objek ukiran.\n3. Pastikan pencahayaan cukup agar pola geometris ukiran terlihat jelas.\n4. Sistem akan menampilkan nama motif dan persentase akurasi secara otomatis.\n5. Ketuk hasil deteksi untuk membuka jendela filosofi lengkap dan mendengarkan panduan suara (Audio Guide).</string>
+
+    <string name="profil_pengembang">Nama:\tPetrus Renaldi Rombe\nNIM:\t6150101220029\nProgram Studi:\tTeknik Informatika\nUniversitas:\tUniversitas Kristen Indonesia Paulus.</string>
+
+</resources>
